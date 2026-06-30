@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  Monitor, Gamepad2, Zap, Users, MapPin, Phone, Clock,
+  Monitor, Gamepad2, Utensils, Snowflake, Sparkles, MapPin, Phone, Clock,
   Instagram, Menu, X, Star, MessageCircle,
 } from "lucide-react";
 
@@ -10,62 +10,61 @@ import {
 // SITE CONFIG
 // ============================================================================
 const SITE = {
-  brandShort: "RSP",
-  brand: "Respawn Gaming",
-  headlineTop: "RESPAWN",
-  headlineBottom: "GAMING",
-  tagline: "PC • Console • Multiplayer — The best gear at the best price in Navi Mumbai.",
-  phoneDisplay: "079776 17497",
-  whatsapp: "917977617497",
-  whatsappMsg: "Hi! I want to book a gaming session at Respawn Gaming Cafe",
-  email: "respawngaming@gmail.com",
-  instagram: "https://instagram.com/respawngamingcafe",
+  brandShort: "RGN",
+  brand: "Regeneration Esports",
+  headlineTop: "REGENERATION",
+  headlineBottom: "ESPORTS",
+  tagline: "PC • Console • Food & Chill — Jogeshwari's perfect-score gaming cafe.",
+  phoneDisplay: "087966 00610",
+  whatsapp: "918796600610",
+  whatsappMsg: "Hi! I want to book a gaming session at Regeneration Esports",
+  email: "regenerationesports@gmail.com",
+  instagram: "https://instagram.com/regenerationesports",
   address:
-    "Storage 17, Palm Beach Galleria Mall, below Burger King, Palm Beach Rd, Phase 2, Sector 19D, Vashi, Navi Mumbai, Maharashtra 400703",
-  hours: "Open daily · Closes 3 AM",
-  rating: "4.8",
-  reviews: "145+",
+    "First Floor, Vaibhav Palace, B-23, New Link Road, Oshiwara, Jogeshwari West, Mumbai, Maharashtra 400102",
+  hours: "Open 24 hours",
+  rating: "5.0",
+  reviews: "114+",
   mapsLink:
-    "https://www.google.com/maps/search/?api=1&query=Respawn+Gaming+Cafe+Palm+Beach+Galleria+Vashi+Navi+Mumbai",
+    "https://www.google.com/maps/search/?api=1&query=Regeneration+Esports+Gaming+Cafe+New+Link+Road+Jogeshwari+West+Mumbai",
   mapsEmbed:
-    "https://www.google.com/maps?q=Palm+Beach+Galleria+Mall+Palm+Beach+Road+Vashi+Navi+Mumbai+400703&output=embed",
+    "https://www.google.com/maps?q=Vaibhav+Palace+New+Link+Road+Oshiwara+Jogeshwari+West+Mumbai+400102&output=embed",
 };
 
 const ZONES = [
   {
     name: "Gaming PCs",
-    tag: "Top Tier",
-    desc: "High-performance rigs built for competitive play. Smooth frames, zero lag — just the way it should be.",
+    tag: "Most Popular",
+    desc: "Premium rigs with a setup that genuinely levels up your gaming experience.",
     icon: Monitor,
-    accent: "#39FF14",
+    accent: "#FFB800",
   },
   {
     name: "Console Zone",
     tag: "Console",
-    desc: "Your favourite console titles on big screens. Grab a controller and drop into the action.",
+    desc: "Console gaming on big screens — perfect for squads and casual sessions alike.",
     icon: Gamepad2,
-    accent: "#00E5FF",
+    accent: "#FF4D6D",
   },
   {
-    name: "Multiplayer Arena",
-    tag: "Squad Up",
-    desc: "LAN parties, co-op sessions, and group bookings. The more the merrier — bring your whole squad.",
-    icon: Users,
-    accent: "#39FF14",
+    name: "Food & Beverages",
+    tag: "Fan Favourite",
+    desc: "Genuinely tasty food that keeps players coming back as much as the gaming does.",
+    icon: Utensils,
+    accent: "#FFB800",
   },
   {
-    name: "Tournaments",
-    tag: "Competitive",
-    desc: "Regular in-house tournaments. Compete for glory, climb the leaderboard, and prove your rank.",
-    icon: Zap,
-    accent: "#00E5FF",
+    name: "Chilled Interiors",
+    tag: "Comfort",
+    desc: "Cool AC, super ambience, and an interior built for long, comfortable sessions.",
+    icon: Snowflake,
+    accent: "#FF4D6D",
   },
 ];
 
 const PRICING_TABS: { id: string; label: string; rate: number }[] = [
   { id: "pc", label: "PC", rate: 40 },
   { id: "console", label: "Console", rate: 60 },
-  { id: "private", label: "Private Room", rate: 100 },
 ];
 
 const TIERS = [
@@ -77,15 +76,15 @@ const TIERS = [
 
 const REVIEWS = [
   {
-    text: "Amazing gaming experience — best service at a great price. Definitely coming back.",
+    text: "The food here is tasty and the setup truly levels up your gaming experience.",
     author: "Google Review",
   },
   {
-    text: "The pricing is very reasonable, especially considering the quality of the equipment. Top-notch setup.",
+    text: "Amazing place with great service. One of the best gaming cafes around.",
     author: "Google Review",
   },
   {
-    text: "Loved the vibe here. Clean, well-maintained machines and a great atmosphere for gaming with friends.",
+    text: "Nice interiors, super ambience, the owner is polite, and the AC is also nice and cool.",
     author: "Google Review",
   },
 ];
@@ -95,16 +94,16 @@ const REVIEWS = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Respawn Gaming Cafe — Navi Mumbai | PC, Console & Tournaments in Vashi" },
+      { title: "Regeneration Esports — 5.0★ Gaming Cafe | Jogeshwari West, Mumbai" },
       {
         name: "description",
         content:
-          "Top-rated gaming cafe at Palm Beach Galleria Mall, Vashi. High-end PCs, consoles, multiplayer arena and tournaments. Open daily till 3 AM. Book on WhatsApp.",
+          "Perfect 5.0-star rated gaming cafe in Jogeshwari West, Mumbai. Premium PCs, console gaming, great food and chilled interiors. Open 24 hours. Book on WhatsApp.",
       },
-      { property: "og:title", content: "Respawn Gaming Cafe — Vashi, Navi Mumbai" },
+      { property: "og:title", content: "Regeneration Esports — Jogeshwari West, Mumbai" },
       {
         property: "og:description",
-        content: "PC • Console • Multiplayer • Tournaments. Open till 3 AM. Book today.",
+        content: "PC • Console • Food & Chill. Rated 5.0★ by players. Open 24 hours.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -117,7 +116,7 @@ function Index() {
   return (
     <div
       className="relative min-h-screen text-white overflow-x-hidden"
-      style={{ background: "#080B08" }}
+      style={{ background: "#0E0A06" }}
     >
       <div className="pointer-events-none fixed inset-0 bg-grid-neon" aria-hidden />
       <div
@@ -125,7 +124,7 @@ function Index() {
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse at 15% 0%, rgba(57,255,20,0.07), transparent 55%), radial-gradient(ellipse at 85% 100%, rgba(0,229,255,0.09), transparent 55%)",
+            "radial-gradient(ellipse at 15% 0%, rgba(255,184,0,0.10), transparent 55%), radial-gradient(ellipse at 85% 100%, rgba(255,77,109,0.10), transparent 55%)",
         }}
       />
       <div className="relative z-10">
@@ -168,9 +167,9 @@ function Nav() {
       style={
         scrolled
           ? {
-              background: "rgba(8,11,8,0.80)",
+              background: "rgba(14,10,6,0.80)",
               backdropFilter: "blur(14px) saturate(140%)",
-              borderBottom: "1px solid rgba(57,255,20,0.12)",
+              borderBottom: "1px solid rgba(255,184,0,0.15)",
             }
           : undefined
       }
@@ -179,9 +178,9 @@ function Nav() {
         <a href="#" className="flex items-center gap-2.5">
           <span
             className="grid place-items-center w-9 h-9 rounded-lg font-display font-black text-sm tracking-widest"
-            style={{ background: "linear-gradient(135deg,#39FF14,#00E5FF)", color: "#080B08" }}
+            style={{ background: "linear-gradient(135deg,#FFB800,#FF4D6D)", color: "#0E0A06" }}
           >
-            RSP
+            RGN
           </span>
           <span className="hidden sm:inline font-display font-bold tracking-wider text-sm">
             {SITE.brand}
@@ -203,9 +202,9 @@ function Nav() {
             rel="noreferrer"
             className="px-5 py-2 rounded-full font-display font-bold text-xs tracking-widest transition-all hover:opacity-90"
             style={{
-              background: "linear-gradient(135deg,#39FF14,#00E5FF)",
-              color: "#080B08",
-              boxShadow: "0 0 20px rgba(57,255,20,0.35)",
+              background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
+              color: "#0E0A06",
+              boxShadow: "0 0 20px rgba(255,184,0,0.35)",
             }}
           >
             BOOK NOW
@@ -219,8 +218,8 @@ function Nav() {
         <nav
           className="md:hidden mx-5 mt-3 p-4 flex flex-col gap-2 animate-fade-in rounded-xl"
           style={{
-            background: "rgba(8,11,8,0.96)",
-            border: "1px solid rgba(57,255,20,0.18)",
+            background: "rgba(14,10,6,0.96)",
+            border: "1px solid rgba(255,184,0,0.2)",
             backdropFilter: "blur(14px)",
           }}
         >
@@ -240,7 +239,7 @@ function Nav() {
             rel="noreferrer"
             onClick={() => setOpen(false)}
             className="mt-1 px-4 py-2 rounded-full text-center font-display font-bold text-xs tracking-widest"
-            style={{ background: "linear-gradient(135deg,#39FF14,#00E5FF)", color: "#080B08" }}
+            style={{ background: "linear-gradient(135deg,#FFB800,#FF4D6D)", color: "#0E0A06" }}
           >
             BOOK NOW
           </a>
@@ -268,32 +267,32 @@ function Hero() {
         <motion.div
           {...fadeUp(0)}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-7"
-          style={{ border: "1px solid rgba(57,255,20,0.4)", background: "rgba(57,255,20,0.05)" }}
+          style={{ border: "1px solid rgba(255,184,0,0.4)", background: "rgba(255,184,0,0.06)" }}
         >
-          <span className="relative w-2 h-2 rounded-full" style={{ background: "#39FF14" }}>
+          <span className="relative w-2 h-2 rounded-full" style={{ background: "#FFB800" }}>
             <span
               className="absolute inset-0 rounded-full animate-ping"
-              style={{ background: "#39FF14", opacity: 0.6 }}
+              style={{ background: "#FFB800", opacity: 0.6 }}
             />
           </span>
           <span
             className="font-display font-bold text-[10px] sm:text-xs tracking-[0.2em]"
-            style={{ color: "#39FF14" }}
+            style={{ color: "#FFB800" }}
           >
-            NAVI MUMBAI'S TOP-RATED GAMING CAFE · 4.8★
+            PERFECT 5.0★ RATED · 114+ REVIEWS
           </span>
         </motion.div>
 
         <motion.h1
           {...fadeUp(1)}
           className="font-display font-black leading-[0.95] tracking-tight"
-          style={{ fontSize: "clamp(3rem, 9vw, 6rem)" }}
+          style={{ fontSize: "clamp(2.6rem, 8vw, 5.5rem)" }}
         >
           <span className="block">{SITE.headlineTop}</span>
           <span
             className="block"
             style={{
-              background: "linear-gradient(135deg,#39FF14,#00E5FF)",
+              background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -321,9 +320,9 @@ function Hero() {
             rel="noreferrer"
             className="px-7 py-3.5 rounded-full font-display font-bold text-sm tracking-widest transition-all hover:opacity-90"
             style={{
-              background: "linear-gradient(135deg,#39FF14,#00E5FF)",
-              color: "#080B08",
-              boxShadow: "0 0 28px rgba(57,255,20,0.4)",
+              background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
+              color: "#0E0A06",
+              boxShadow: "0 0 28px rgba(255,184,0,0.4)",
             }}
           >
             BOOK A SESSION
@@ -331,7 +330,7 @@ function Hero() {
           <a
             href="#pricing"
             className="px-7 py-3.5 rounded-full font-display font-bold text-sm tracking-widest text-white/90 hover:text-white transition-colors"
-            style={{ border: "1px solid rgba(57,255,20,0.4)" }}
+            style={{ border: "1px solid rgba(255,184,0,0.4)" }}
           >
             VIEW PRICING
           </a>
@@ -344,8 +343,8 @@ function Hero() {
           {[
             { label: `${SITE.rating}★ Google Rating` },
             { label: `${SITE.reviews} Reviews` },
-            { label: "Open till 3 AM" },
-            { label: "Palm Beach Galleria, Vashi" },
+            { label: "Open 24 Hours" },
+            { label: "Food & Beverages" },
           ].map((s, i) => (
             <div
               key={s.label}
@@ -353,8 +352,8 @@ function Hero() {
               style={{
                 animationDelay: `${i * 0.6}s`,
                 fontFamily: "Rajdhani, sans-serif",
-                background: "rgba(57,255,20,0.04)",
-                border: "1px solid rgba(57,255,20,0.18)",
+                background: "rgba(255,184,0,0.05)",
+                border: "1px solid rgba(255,184,0,0.18)",
                 backdropFilter: "blur(8px)",
               }}
             >
@@ -377,28 +376,28 @@ function About() {
       <div className="max-w-7xl mx-auto">
         <SectionHead
           eyebrow="WHO WE ARE"
-          title="GAME ON. ANY TIME."
-          subtitle="Top-tier hardware, fair prices, and a community that keeps coming back."
+          title="PLAY. EAT. CHILL."
+          subtitle="A perfect score isn't easy to earn — here's how we got there."
         />
         <div className="mt-14 grid sm:grid-cols-3 gap-5">
           {[
             {
-              stat: "4.8★",
-              label: "Google Rating",
-              desc: "One of Navi Mumbai's highest-rated gaming cafes — built on consistently great service and hardware that just works.",
-              accent: "#39FF14",
+              stat: "5.0★",
+              label: "Perfect Rating",
+              desc: "A flawless 5.0 stars across 114+ reviews — no other Mumbai gaming cafe on our books has matched this.",
+              accent: "#FFB800",
             },
             {
-              stat: "3 AM",
-              label: "Closing Time",
-              desc: "Late-night sessions and weekend marathons are our speciality. We stay open so you can keep playing.",
-              accent: "#00E5FF",
+              stat: "24H",
+              label: "Always Open",
+              desc: "No closing time, ever. Day sessions, night marathons — Regeneration is ready whenever you are.",
+              accent: "#FF4D6D",
             },
             {
-              stat: "₹",
-              label: "Best Prices",
-              desc: "Amazing experience at the best price — that's what our players say. Quality gear without burning your wallet.",
-              accent: "#39FF14",
+              stat: "AC",
+              label: "Cool Comfort",
+              desc: "Cool AC, super ambience, and an interior players genuinely compliment. Comfort matters as much as the gear.",
+              accent: "#FFB800",
             },
           ].map((item, i) => (
             <motion.div
@@ -410,7 +409,7 @@ function About() {
               className="relative p-7 rounded-xl overflow-hidden"
               style={{
                 background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.07)",
               }}
             >
               <div
@@ -446,9 +445,9 @@ function Zones() {
         <SectionHead
           eyebrow="WHAT WE OFFER"
           title="GAMING ZONES"
-          subtitle="Pick your setup and get into it."
+          subtitle="More than just gaming — a full hangout experience."
         />
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div className="mt-14 grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {ZONES.map((z, i) => (
             <motion.div
               key={z.name}
@@ -459,7 +458,7 @@ function Zones() {
               className="relative p-6 sm:p-7 rounded-xl overflow-hidden transition-transform hover:-translate-y-1"
               style={{
                 background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.07)",
               }}
             >
               <div
@@ -522,7 +521,7 @@ function Reviews() {
               className="p-6 rounded-xl flex flex-col gap-4"
               style={{
                 background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.07)",
               }}
             >
               <div className="flex gap-0.5">
@@ -565,7 +564,7 @@ function Pricing() {
         <SectionHead
           eyebrow="PRICING"
           title="PRICING PLANS"
-          subtitle="Reasonable prices, premium quality. No hidden charges."
+          subtitle="No hidden charges. Just great gaming and great food."
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">
@@ -579,13 +578,13 @@ function Pricing() {
                 style={
                   isActive
                     ? {
-                        background: "linear-gradient(135deg,#39FF14,#00E5FF)",
-                        color: "#080B08",
-                        boxShadow: "0 0 24px rgba(57,255,20,0.35)",
+                        background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
+                        color: "#0E0A06",
+                        boxShadow: "0 0 24px rgba(255,184,0,0.35)",
                       }
                     : {
                         background: "rgba(255,255,255,0.03)",
-                        border: "1px solid rgba(57,255,20,0.2)",
+                        border: "1px solid rgba(255,184,0,0.2)",
                         color: "rgba(255,255,255,0.8)",
                       }
                 }
@@ -614,16 +613,16 @@ function Pricing() {
                       ? {
                           border: "1px solid transparent",
                           backgroundImage:
-                            "linear-gradient(rgba(8,11,8,0.88),rgba(8,11,8,0.88)), linear-gradient(135deg,#39FF14,#00E5FF)",
+                            "linear-gradient(rgba(14,10,6,0.88),rgba(14,10,6,0.88)), linear-gradient(135deg,#FFB800,#FF4D6D)",
                           backgroundOrigin: "border-box",
                           backgroundClip: "padding-box, border-box",
                           boxShadow:
-                            "0 0 30px rgba(57,255,20,0.25), inset 0 0 24px rgba(0,229,255,0.08)",
+                            "0 0 30px rgba(255,184,0,0.25), inset 0 0 24px rgba(255,77,109,0.1)",
                         }
                       : {
                           background: "rgba(255,255,255,0.03)",
                           backdropFilter: "blur(12px)",
-                          border: "1px solid rgba(255,255,255,0.06)",
+                          border: "1px solid rgba(255,255,255,0.07)",
                         }
                   }
                 >
@@ -631,8 +630,8 @@ function Pricing() {
                     <span
                       className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full font-display font-bold text-[10px] tracking-widest whitespace-nowrap"
                       style={{
-                        background: "linear-gradient(135deg,#39FF14,#00E5FF)",
-                        color: "#080B08",
+                        background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
+                        color: "#0E0A06",
                       }}
                     >
                       BEST VALUE
@@ -645,7 +644,7 @@ function Pricing() {
                     {tier.hours} {tier.hours === 1 ? "Hour" : "Hours"}
                   </div>
                   <div className="mt-5" style={{ fontFamily: "Rajdhani, sans-serif" }}>
-                    <span className="font-bold text-4xl sm:text-5xl" style={{ color: "#39FF14" }}>
+                    <span className="font-bold text-4xl sm:text-5xl" style={{ color: "#FFB800" }}>
                       ₹{price}
                     </span>
                   </div>
@@ -654,7 +653,7 @@ function Pricing() {
                   </div>
                   <a
                     href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
-                      `Hi! I want to book a ${tier.hours}hr ${active.label} session at Respawn Gaming Cafe.`
+                      `Hi! I want to book a ${tier.hours}hr ${active.label} session at Regeneration Esports.`
                     )}`}
                     target="_blank"
                     rel="noreferrer"
@@ -662,11 +661,11 @@ function Pricing() {
                     style={
                       featured
                         ? {
-                            background: "linear-gradient(135deg,#39FF14,#00E5FF)",
-                            color: "#080B08",
-                            boxShadow: "0 0 20px rgba(57,255,20,0.4)",
+                            background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
+                            color: "#0E0A06",
+                            boxShadow: "0 0 20px rgba(255,184,0,0.4)",
                           }
-                        : { border: "1px solid rgba(57,255,20,0.35)", color: "#fff" }
+                        : { border: "1px solid rgba(255,184,0,0.35)", color: "#fff" }
                     }
                   >
                     BOOK
@@ -681,7 +680,7 @@ function Pricing() {
           className="mt-6 text-center text-xs text-white/40"
           style={{ fontFamily: "Rajdhani, sans-serif" }}
         >
-          * Prices are indicative. Contact us on WhatsApp for current rates and offers.
+          * Prices are indicative. Contact us on WhatsApp for current rates and the food menu.
         </p>
       </div>
     </section>
@@ -699,7 +698,7 @@ function Location() {
         <SectionHead
           eyebrow="FIND US"
           title="LOCATION & BOOKING"
-          subtitle="Inside Palm Beach Galleria Mall, Vashi — below Burger King."
+          subtitle="Vaibhav Palace, New Link Road, Jogeshwari West."
         />
         <div className="mt-12 grid lg:grid-cols-2 gap-6">
           <motion.a
@@ -712,12 +711,12 @@ function Location() {
             transition={{ duration: 0.6 }}
             className="relative block rounded-xl overflow-hidden h-[360px] lg:h-[480px]"
             style={{
-              border: "2px solid rgba(57,255,20,0.3)",
-              boxShadow: "0 0 32px rgba(57,255,20,0.12)",
+              border: "2px solid rgba(255,184,0,0.3)",
+              boxShadow: "0 0 32px rgba(255,184,0,0.12)",
             }}
           >
             <iframe
-              title="Respawn Gaming Cafe map"
+              title="Regeneration Esports map"
               src={SITE.mapsEmbed}
               className="w-full h-full pointer-events-none"
               style={{
@@ -729,12 +728,12 @@ function Location() {
             <div
               className="absolute top-4 left-4 px-3 py-2 flex items-center gap-2 rounded-lg"
               style={{
-                background: "rgba(8,11,8,0.85)",
-                border: "1px solid rgba(57,255,20,0.3)",
+                background: "rgba(14,10,6,0.85)",
+                border: "1px solid rgba(255,184,0,0.3)",
                 backdropFilter: "blur(8px)",
               }}
             >
-              <MapPin className="w-4 h-4" style={{ color: "#39FF14" }} />
+              <MapPin className="w-4 h-4" style={{ color: "#FFB800" }} />
               <span className="text-xs tracking-wider" style={{ fontFamily: "Rajdhani, sans-serif" }}>
                 Click to open in Google Maps
               </span>
@@ -749,14 +748,14 @@ function Location() {
             className="p-7 sm:p-8 flex flex-col rounded-xl"
             style={{
               background: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.07)",
             }}
           >
             <h3 className="font-display font-black text-2xl sm:text-3xl tracking-wide">
               READY TO PLAY?
             </h3>
             <p className="mt-2 text-sm text-white/65">
-              Walk in or book ahead — we'll have your seat ready.
+              Walk in any time — we're always open, always ready.
             </p>
 
             <div className="mt-7 space-y-4">
@@ -782,7 +781,7 @@ function Location() {
               className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-display font-bold text-sm tracking-widest transition-transform hover:scale-[1.03]"
               style={{
                 background: "linear-gradient(135deg,#25D366,#1ebe5d)",
-                color: "#080B08",
+                color: "#0E0A06",
                 boxShadow: "0 0 24px rgba(37,211,102,0.4)",
               }}
             >
@@ -816,11 +815,11 @@ function InfoRow({
       <div
         className="grid place-items-center w-10 h-10 shrink-0 rounded-lg"
         style={{
-          background: "rgba(57,255,20,0.07)",
-          border: "1px solid rgba(57,255,20,0.25)",
+          background: "rgba(255,184,0,0.08)",
+          border: "1px solid rgba(255,184,0,0.25)",
         }}
       >
-        <Icon className="w-4 h-4" style={{ color: "#39FF14" }} />
+        <Icon className="w-4 h-4" style={{ color: "#FFB800" }} />
       </div>
       <div className="min-w-0">
         <div className="font-display text-[10px] tracking-widest text-white/50">
@@ -862,7 +861,7 @@ function SectionHead({
     <div className="text-center max-w-2xl mx-auto">
       <span
         className="font-display text-[10px] sm:text-xs tracking-[0.3em]"
-        style={{ color: "#39FF14" }}
+        style={{ color: "#FFB800" }}
       >
         {eyebrow}
       </span>
@@ -891,20 +890,20 @@ function Footer() {
           <span
             className="font-display font-black text-2xl tracking-[0.25em]"
             style={{
-              background: "linear-gradient(135deg,#39FF14,#00E5FF)",
+              background: "linear-gradient(135deg,#FFB800,#FF4D6D)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
             }}
           >
-            RSP
+            RGN
           </span>
           <span className="font-display text-sm text-white/80">{SITE.brand}</span>
           <span
             className="text-xs text-white/40"
             style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
-            Palm Beach Galleria Mall, Vashi · Navi Mumbai
+            New Link Road, Jogeshwari West · Mumbai
           </span>
         </div>
 
@@ -987,7 +986,7 @@ function WhatsAppFAB() {
         className="relative grid place-items-center w-14 h-14 rounded-full transition-transform group-hover:scale-110"
         style={{
           background: "#25D366",
-          color: "#080B08",
+          color: "#0E0A06",
           boxShadow: "0 0 28px rgba(37,211,102,0.55)",
         }}
       >
